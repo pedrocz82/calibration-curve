@@ -1,4 +1,4 @@
-# Calibration Curve
+# Calibration Curve (Spectrophotometry)
 
 ### Overview
 Application that receives absorbance values and concentrations collected 
