@@ -11,8 +11,8 @@ from app.models import calibration_curve
 @pytest.fixture
 def cc_values():
     return {
-        'absorbance': [0.2, 1.0, 1.5, 2.0, 2.5],
-        'concentration': [0.1457, 0.7169, 1.0846, 1.4416, 1.6849]
+        'absorbance': [0.20, 0.40, 0.60, 0.80, 1.00, 1.2],
+        'concentration': [0.1516, 0.3826, 0.4281, 0.6545, 0.7118, 0.9565]
     }
 
 
@@ -23,6 +23,7 @@ def cc(cc_values):
 
 def test_create_cc(cc, cc_values):
     for attr_name in cc_values:
+        print('getattr(cc, attr_name)')
         print(getattr(cc, attr_name))
         assert getattr(cc, attr_name) == cc_values.get(attr_name)
 
