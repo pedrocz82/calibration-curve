@@ -47,9 +47,9 @@ class CalibrationCurve:
 
         plt.plot(absorbance, concentration_curve, label=f'{str(self)}')
         plt.plot(absorbance, concentration_lab, 'ro', label='lab data')
-        plt.xlabel('absorbance (mg/L)')
-        plt.ylabel('concentration')
-        plt.title('concentration x absorbance (mg/L)')
+        plt.xlabel('absorbance')
+        plt.ylabel('concentration (mg/L)')
+        plt.title('concentration (mg/L) x absorbance')
         plt.legend()
         plt.show()
 
