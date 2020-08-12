@@ -11,8 +11,8 @@ from app.models import calibration_curve
 @pytest.fixture
 def cc_values():
     return {
-        'absorbance': [0.20, 0.40, 0.60, 0.80, 1.00, 1.2],
-        'concentration': [0.1516, 0.3826, 0.4281, 0.6545, 0.7118, 0.9565]
+        'absorbance': [0.1516, 0.3826, 0.4281, 0.6545, 0.7118, 0.9565],
+        'concentration': [0.20, 0.40, 0.60, 0.80, 1.00, 1.2]
     }
 
 
@@ -29,11 +29,11 @@ def test_create_cc(cc, cc_values):
 
 
 def test_a(cc):
-    assert cc.a == pytest.approx(0.7483571428571428, rel=1e-4)
+    assert cc.a == pytest.approx(1.296948404730149, rel=1e-4)
 
 
 def test_b(cc):
-    assert cc.b == pytest.approx(0.023666666666666832, rel=1e-4)
+    assert cc.b == pytest.approx(-0.010100867396502676, rel=1e-4)
 
 
 def test_r_squared(cc):
@@ -41,4 +41,4 @@ def test_r_squared(cc):
 
 
 def test_concentration(cc):
-    assert cc(2) == pytest.approx(1.5203809523809, rel=1e-4)
+    assert cc(2) == pytest.approx(2.5837959420637, rel=1e-4)

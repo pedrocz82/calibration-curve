@@ -9,6 +9,7 @@ the graph
 - Python 3.6.9
 - Numpy
 - Matplotlib
+- Pytest
 
 ### Chart Output
 ![Test Image 1](.readme-files/chart_1.png)
