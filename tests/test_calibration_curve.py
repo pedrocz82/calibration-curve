@@ -29,12 +29,16 @@ def test_create_cc(cc, cc_values):
 
 
 def test_a(cc):
-    assert cc.a == pytest.approx(0.6816715006305171, rel=1e-4)
+    assert cc.a == pytest.approx(0.7483571428571428, rel=1e-4)
 
 
 def test_b(cc):
-    assert cc.b == pytest.approx(0.03313303909205536, rel=1e-4)
+    assert cc.b == pytest.approx(0.023666666666666832, rel=1e-4)
+
+
+def test_r_squared(cc):
+    assert cc.r_squared == pytest.approx(0.9705806025969832, rel=1e-4)
 
 
 def test_concentration(cc):
-    assert cc(2) == pytest.approx(1.3964760403530896, rel=1e-4)
+    assert cc(2) == pytest.approx(1.5203809523809, rel=1e-4)

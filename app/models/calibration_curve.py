@@ -32,22 +32,24 @@ class CalibrationCurve:
     def r_squared(self):
         correlation_matrix = np.corrcoef(self.absorbance, self.concentration)
         correlation_xy = correlation_matrix[0, 1]
-        r_squared = correlation_xy ** 2
-        return
+        return correlation_xy ** 2
 
     def __call__(self, x):
         return self.a * x + self.b
+
+    def __str__(self):
+        return f'calibration_curve -> {self.a:.4f}*x + {self.b:.4f} (r²={self.r_squared:.4f}) '
 
     def plot(self):
         absorbance = np.array(self.absorbance)
         concentration_lab = np.array(self.concentration)
         concentration_curve = self(absorbance)
 
-        plt.plot(absorbance, concentration_curve, label='trendline')
+        plt.plot(absorbance, concentration_curve, label=f'{str(self)}')
         plt.plot(absorbance, concentration_lab, 'ro', label='lab data')
         plt.xlabel('absorbance (mg/L)')
         plt.ylabel('concentration')
-        plt.title('absorbance x concentration')
+        plt.title('concentration x absorbance (mg/L)')
         plt.legend()
         plt.show()
 
