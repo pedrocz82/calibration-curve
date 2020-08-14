@@ -38,7 +38,7 @@ class CalibrationCurve:
         return self.a * x + self.b
 
     def __str__(self):
-        return f'calibration_curve -> {self.a:.4f}*x + {self.b:.4f} (r²={self.r_squared:.4f}) '
+        return f'(a={self.a:.4f}, b={self.b:.4f}, r²={self.r_squared:.4f}) '
 
     def plot(self):
         absorbance = np.array(self.absorbance)
