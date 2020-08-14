@@ -55,4 +55,5 @@ class CalibrationCurve:
 
 
 c1 = CalibrationCurve([0.1516, 0.3826, 0.4281, 0.6545, 0.7118, 0.9565], [0.20, 0.40, 0.60, 0.80, 1.00, 1.2])
+print(c1(0.9565))
 c1.plot()
